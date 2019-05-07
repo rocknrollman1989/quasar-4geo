@@ -15,7 +15,10 @@
         <q-toolbar-title>
           Quasar App
         </q-toolbar-title>
-        <router-link to="/google_map">Go to googleMap</router-link>
+        <div class="row justify-between" style="width: 300px">
+          <router-link to="/google_map">Go to googleMap</router-link>
+          <router-link to="/">Home</router-link>
+        </div>
       </q-toolbar>
     </q-header>
 

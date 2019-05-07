@@ -8,11 +8,11 @@
     >
       <GmapMarker
         :key="m.id"
-        v-for="(m) in markers"
+        v-for="(m, index) in markers"
         :position="m.position"
         :clickable="true"
         :draggable="true"
-        @click="getMarkerId($event)"
+        @click="getMarkerId(index)"
       />
     </GmapMap>
   </q-page>
@@ -36,9 +36,6 @@ export default {
       ],
     };
   },
-  mounted() {
-    console.log(this);
-  },
   methods: {
     setMarker(target) {
       const { lat, lng } = target.latLng;
@@ -46,8 +43,8 @@ export default {
         { position: { lat: lat(), lng: lng() } },
       );
     },
-    getMarkerId(event) {
-      console.log(event);
+    getMarkerId(index) {
+      this.markers.splice(index, 1);
     },
   },
 };
