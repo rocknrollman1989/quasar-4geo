@@ -6,10 +6,6 @@ const routes = [
     children: [
       {
         path: '',
-        component: () => import('pages/Index.vue'),
-      },
-      {
-        path: 'google_map',
         name: 'google-map-page',
         component: () => import('pages/GoogleMapPage.vue'),
       },
